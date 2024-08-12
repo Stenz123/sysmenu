@@ -1,5 +1,6 @@
 EXEC = sysmenu
 LIB = libsysmenu.so
+LIBPREFIX=lib
 PKGS = gtkmm-4.0 gtk4-layer-shell-0
 SRCS = $(filter-out src/main.cpp, $(wildcard src/*.cpp))
 OBJS = $(SRCS:.cpp=.o)
@@ -24,7 +25,7 @@ all: $(EXEC) $(LIB)
 install: $(EXEC)
 	mkdir -p $(DESTDIR)/bin $(DESTDIR)/lib
 	install $(EXEC) $(DESTDIR)/bin/$(EXEC)
-	install $(LIB) $(DESTDIR)/lib/$(LIB)
+	install $(LIB) $(DESTDIR)/${LIBPREFIX}/$(LIB)
 
 clean:
 	@echo "Cleaning up"
