@@ -23,7 +23,7 @@ endef
 all: $(EXEC) $(LIB)
 
 install: $(EXEC)
-	mkdir -p $(DESTDIR)/bin $(DESTDIR)/lib
+	mkdir -p $(DESTDIR)/bin $(DESTDIR)/${LIBPREFIX}
 	install $(EXEC) $(DESTDIR)/bin/$(EXEC)
 	install $(LIB) $(DESTDIR)/${LIBPREFIX}/$(LIB)
 
